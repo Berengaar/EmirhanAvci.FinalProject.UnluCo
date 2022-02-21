@@ -1,0 +1,408 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.WebApi.csproj": {}
+  },
+  "projects": {
+    "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.BusinessLayer\\EmirhanAvci.Project.BusinessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.BusinessLayer\\EmirhanAvci.Project.BusinessLayer.csproj",
+        "projectName": "EmirhanAvci.Project.BusinessLayer",
+        "projectPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.BusinessLayer\\EmirhanAvci.Project.BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\Bdk11\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.BusinessLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bdk11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "https://nuget.devexpress.com/hkIihQI1qpKzhdUsnEqtadQ8dgi7lYnQ1JuY1yU3ZhYGGYBDtn/api": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.DataAccessLayer\\EmirhanAvci.Project.DataAccessLayer.csproj": {
+                "projectPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.DataAccessLayer\\EmirhanAvci.Project.DataAccessLayer.csproj"
+              },
+              "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.SharedLayer\\EmirhanAvci.Project.SharedLayer.csproj": {
+                "projectPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.SharedLayer\\EmirhanAvci.Project.SharedLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "DevExpress.Xpo": {
+              "target": "Package",
+              "version": "[20.1.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.DataAccessLayer\\EmirhanAvci.Project.DataAccessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.DataAccessLayer\\EmirhanAvci.Project.DataAccessLayer.csproj",
+        "projectName": "EmirhanAvci.Project.DataAccessLayer",
+        "projectPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.DataAccessLayer\\EmirhanAvci.Project.DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\Bdk11\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.DataAccessLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bdk11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "https://nuget.devexpress.com/hkIihQI1qpKzhdUsnEqtadQ8dgi7lYnQ1JuY1yU3ZhYGGYBDtn/api": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.EntityLayer\\EmirhanAvci.Project.EntityLayer.csproj": {
+                "projectPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.EntityLayer\\EmirhanAvci.Project.EntityLayer.csproj"
+              },
+              "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.SharedLayer\\EmirhanAvci.Project.SharedLayer.csproj": {
+                "projectPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.SharedLayer\\EmirhanAvci.Project.SharedLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.EntityLayer\\EmirhanAvci.Project.EntityLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.EntityLayer\\EmirhanAvci.Project.EntityLayer.csproj",
+        "projectName": "EmirhanAvci.Project.EntityLayer",
+        "projectPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.EntityLayer\\EmirhanAvci.Project.EntityLayer.csproj",
+        "packagesPath": "C:\\Users\\Bdk11\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.EntityLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bdk11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "https://nuget.devexpress.com/hkIihQI1qpKzhdUsnEqtadQ8dgi7lYnQ1JuY1yU3ZhYGGYBDtn/api": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.SharedLayer\\EmirhanAvci.Project.SharedLayer.csproj": {
+                "projectPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.SharedLayer\\EmirhanAvci.Project.SharedLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.SharedLayer\\EmirhanAvci.Project.SharedLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.SharedLayer\\EmirhanAvci.Project.SharedLayer.csproj",
+        "projectName": "EmirhanAvci.Project.SharedLayer",
+        "projectPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.SharedLayer\\EmirhanAvci.Project.SharedLayer.csproj",
+        "packagesPath": "C:\\Users\\Bdk11\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.SharedLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bdk11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "https://nuget.devexpress.com/hkIihQI1qpKzhdUsnEqtadQ8dgi7lYnQ1JuY1yU3ZhYGGYBDtn/api": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.WebApi.csproj",
+        "projectName": "EmirhanAvci.Project.WebApi",
+        "projectPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.WebApi.csproj",
+        "packagesPath": "C:\\Users\\Bdk11\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.WebApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Bdk11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "https://nuget.devexpress.com/hkIihQI1qpKzhdUsnEqtadQ8dgi7lYnQ1JuY1yU3ZhYGGYBDtn/api": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.BusinessLayer\\EmirhanAvci.Project.BusinessLayer.csproj": {
+                "projectPath": "D:\\Users\\Bdk11\\Desktop\\Emir\\WebApiProjectEmir\\EmirhanAvci.Project.WebApi\\EmirhanAvci.Project.BusinessLayer\\EmirhanAvci.Project.BusinessLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

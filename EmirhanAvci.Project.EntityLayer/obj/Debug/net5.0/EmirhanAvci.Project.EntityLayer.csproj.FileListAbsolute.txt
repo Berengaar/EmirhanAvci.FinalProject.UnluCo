@@ -1,0 +1,15 @@
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\bin\Debug\net5.0\EmirhanAvci.Project.EntityLayer.deps.json
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\bin\Debug\net5.0\EmirhanAvci.Project.EntityLayer.dll
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\bin\Debug\net5.0\ref\EmirhanAvci.Project.EntityLayer.dll
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\bin\Debug\net5.0\EmirhanAvci.Project.EntityLayer.pdb
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\bin\Debug\net5.0\EmirhanAvci.Project.SharedLayer.dll
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\bin\Debug\net5.0\EmirhanAvci.Project.SharedLayer.pdb
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\obj\Debug\net5.0\EmirhanAvci.Project.EntityLayer.csproj.AssemblyReference.cache
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\obj\Debug\net5.0\EmirhanAvci.Project.EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\obj\Debug\net5.0\EmirhanAvci.Project.EntityLayer.AssemblyInfoInputs.cache
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\obj\Debug\net5.0\EmirhanAvci.Project.EntityLayer.AssemblyInfo.cs
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\obj\Debug\net5.0\EmirhanAvci.Project.EntityLayer.csproj.CoreCompileInputs.cache
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\obj\Debug\net5.0\EmirhanAvci.Project.EntityLayer.csproj.CopyComplete
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\obj\Debug\net5.0\EmirhanAvci.Project.EntityLayer.dll
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\obj\Debug\net5.0\ref\EmirhanAvci.Project.EntityLayer.dll
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.EntityLayer\obj\Debug\net5.0\EmirhanAvci.Project.EntityLayer.pdb
