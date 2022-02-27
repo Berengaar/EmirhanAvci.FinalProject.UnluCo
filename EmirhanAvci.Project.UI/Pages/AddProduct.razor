@@ -1,6 +1,8 @@
 ﻿@page "/AddProduct"
 @inject IHttpClientFactory ClientFactory
-
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inject ProtectedLocalStorage Storage
+@inject NavigationManager NavManager
 <h3>Add Product</h3>
 <hr />
 <br />
@@ -81,7 +83,28 @@
     protected override async Task OnInitializedAsync()
     {
         var client = ClientFactory.CreateClient();
-        Categories= await client.GetFromJsonAsync<DataResult<CategoryListDto>>("http://localhost:5001/api/Category/GetAll");
+
+        var url = $"http://localhost:5001/api/Brand/GetAll";
+        var request = new HttpRequestMessage(HttpMethod.Get, url);
+
+        var token = await Storage.GetAsync<string>("token");
+
+
+        request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token.Value);
+
+        var response = await client.SendAsync(request);
+
+        //WithAuthorizationMod
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            Brands= System.Text.Json.JsonSerializer.Deserialize<DataResult<BrandListDto>>(json);
+            Categories = await client.GetFromJsonAsync<DataResult<CategoryListDto>>("http://localhost:5001/api/Category/GetAll");
+            Colors = await client.GetFromJsonAsync<DataResult<ColorListDto>>("http://localhost:5001/api/Color/GetAll");
+
+        }
+        //NotAuthorizationMod
+        Categories = await client.GetFromJsonAsync<DataResult<CategoryListDto>>("http://localhost:5001/api/Category/GetAll");
         Brands = await client.GetFromJsonAsync<DataResult<BrandListDto>>("http://localhost:5001/api/Brand/GetAll");
         Colors = await client.GetFromJsonAsync<DataResult<ColorListDto>>("http://localhost:5001/api/Color/GetAll");
     }
@@ -92,6 +115,8 @@
         var client = ClientFactory.CreateClient();
 
         var response = await client.PostAsJsonAsync("http://localhost:5001/api/Product/AddAsync", Product);
+        NavManager.NavigateTo("/product");
+
 
     }
     void HandleFileSelection(InputFileChangeEventArgs eventArgs)

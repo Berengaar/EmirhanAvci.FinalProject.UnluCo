@@ -21,7 +21,7 @@ namespace EmirhanAvci.Project.WebApi.Controllers
         {
             _brandService = brandService;
         }
-
+        //[Authorize]
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAllAsync()
         {

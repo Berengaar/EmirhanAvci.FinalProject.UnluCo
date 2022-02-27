@@ -1,22 +1,24 @@
 ﻿@page "/login"
 @inject IHttpClientFactory ClientFactory
+@inject NavigationManager NavManager
 @using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
 @inject ProtectedLocalStorage Storage
 <h3>Login</h3>
-
+<hr /><br />
 <EditForm Model="@User" OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
-    <p>
+    <div class="form-group">
         <label for="Email">Email:</label>
-        <InputText id="Email" @bind-Value="User.Username"></InputText>
+        <InputText class="from-control" id="Email" @bind-Value="User.Username"></InputText>
         <ValidationMessage For="()=>User.Username" />
-    </p>
-    <p>
-        <label for="Password">Password::</label>
-        <InputText id="Password" @bind-Value="User.Password"></InputText>
+    </div>
+    <div class="form-group">
+        <label for="Password">Password:</label>
+        <InputText class="form-control" id="Password" @bind-Value="User.Password"></InputText>
         <ValidationMessage For="()=>User.Password" />
-    </p>
-    <input type="submit" value="Login" />
+    </div>
+    <div class="row"><input class="btn btn-success" type="submit" value="Login" /></div>
+    
 </EditForm>
 
 @code {
@@ -33,6 +35,6 @@
             string token = await response.Content.ReadAsStringAsync();
             await Storage.SetAsync("token", token);
         }
+        NavManager.NavigateTo("product");
     }
 }
-@*  https://localhost:44353/   https://localhost:44353/authenticate/Login *@

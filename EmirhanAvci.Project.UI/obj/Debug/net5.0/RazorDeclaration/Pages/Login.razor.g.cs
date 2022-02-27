@@ -139,7 +139,7 @@ using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Pages\Login.razor"
+#line 4 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Pages\Login.razor"
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 
 #line default
@@ -154,7 +154,7 @@ using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 22 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Pages\Login.razor"
+#line 24 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Pages\Login.razor"
        
     private EmirhanAvci.Project.EntityLayer.Authentication.Models.LoginModel User = new();
 
@@ -169,12 +169,14 @@ using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
             string token = await response.Content.ReadAsStringAsync();
             await Storage.SetAsync("token", token);
         }
+        NavManager.NavigateTo("product");
     }
 
 #line default
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ProtectedLocalStorage Storage { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHttpClientFactory ClientFactory { get; set; }
     }
 }

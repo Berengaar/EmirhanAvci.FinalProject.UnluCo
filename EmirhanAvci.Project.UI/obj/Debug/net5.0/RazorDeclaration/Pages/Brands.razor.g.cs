@@ -138,8 +138,15 @@ using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/UpdateProduct/{id}")]
-    public partial class UpdateProduct : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 3 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Pages\Brands.razor"
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/brands")]
+    public partial class Brands : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -147,42 +154,35 @@ using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 67 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Pages\UpdateProduct.razor"
+#line 8 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Pages\Brands.razor"
        
-    [Parameter]
-    public string Id { get; set; }
 
-    public ProductUpdateDto Product { get; set; }
-
-    public DataResult<CategoryListDto> Categories;
-
-    public DataResult<BrandListDto> Brands;
-
-    public DataResult<ColorListDto> Colors;
+    public DataResult<BrandListDto> BrandList { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         var client = ClientFactory.CreateClient();
-        var url = "http://localhost:5001/api/Product/Update/" + Id;
-        Product = await client.GetFromJsonAsync<ProductUpdateDto>(url);
-        Categories = await client.GetFromJsonAsync<DataResult<CategoryListDto>>("http://localhost:5001/api/Category/GetAll");
-        Brands = await client.GetFromJsonAsync<DataResult<BrandListDto>>("http://localhost:5001/api/Brand/GetAll");
-        Colors = await client.GetFromJsonAsync<DataResult<ColorListDto>>("http://localhost:5001/api/Color/GetAll");
-    }
 
-    private async Task Submit()
-    {
-        var client = ClientFactory.CreateClient();
+        var url = $"http://localhost:5001/api/Brand/GetAll";
+        var request = new HttpRequestMessage(HttpMethod.Get, url);
 
-        var url = "http://localhost:5001/api/Product/UpdateAsync/" + Id;
-        var response = await client.PutAsJsonAsync(url, Product);
-        NavManager.NavigateTo("/product");
+        var token = await Storage.GetAsync<string>("token");
+
+        request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token.Value);
+
+        var response = await client.SendAsync(request);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            BrandList=System.Text.Json.JsonSerializer.Deserialize<DataResult<BrandListDto>>(json);
+        }
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ProtectedLocalStorage Storage { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHttpClientFactory ClientFactory { get; set; }
     }
 }

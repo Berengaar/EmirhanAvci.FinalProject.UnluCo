@@ -145,3 +145,9 @@ D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\Emirhan
 D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\obj\Debug\net5.0\ref\EmirhanAvci.Project.UI.dll
 D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\obj\Debug\net5.0\EmirhanAvci.Project.UI.pdb
 D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\obj\Debug\net5.0\EmirhanAvci.Project.UI.genruntimeconfig.cache
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\obj\Debug\net5.0\RazorDeclaration\Pages\Brands.razor.g.cs
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\obj\Debug\net5.0\Razor\Pages\Brands.razor.g.cs
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\obj\Debug\net5.0\RazorDeclaration\Pages\Offer.razor.g.cs
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\obj\Debug\net5.0\Razor\Pages\Offer.razor.g.cs
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\obj\Debug\net5.0\RazorDeclaration\Pages\OfferDetail.razor.g.cs
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\obj\Debug\net5.0\Razor\Pages\OfferDetail.razor.g.cs

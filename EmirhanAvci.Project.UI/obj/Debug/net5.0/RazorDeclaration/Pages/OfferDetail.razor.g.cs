@@ -138,51 +138,22 @@ using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/UpdateProduct/{id}")]
-    public partial class UpdateProduct : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 4 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Pages\OfferDetail.razor"
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/OfferDetail/{id}")]
+    public partial class OfferDetail : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 67 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Pages\UpdateProduct.razor"
-       
-    [Parameter]
-    public string Id { get; set; }
-
-    public ProductUpdateDto Product { get; set; }
-
-    public DataResult<CategoryListDto> Categories;
-
-    public DataResult<BrandListDto> Brands;
-
-    public DataResult<ColorListDto> Colors;
-
-    protected override async Task OnInitializedAsync()
-    {
-        var client = ClientFactory.CreateClient();
-        var url = "http://localhost:5001/api/Product/Update/" + Id;
-        Product = await client.GetFromJsonAsync<ProductUpdateDto>(url);
-        Categories = await client.GetFromJsonAsync<DataResult<CategoryListDto>>("http://localhost:5001/api/Category/GetAll");
-        Brands = await client.GetFromJsonAsync<DataResult<BrandListDto>>("http://localhost:5001/api/Brand/GetAll");
-        Colors = await client.GetFromJsonAsync<DataResult<ColorListDto>>("http://localhost:5001/api/Color/GetAll");
-    }
-
-    private async Task Submit()
-    {
-        var client = ClientFactory.CreateClient();
-
-        var url = "http://localhost:5001/api/Product/UpdateAsync/" + Id;
-        var response = await client.PutAsJsonAsync(url, Product);
-        NavManager.NavigateTo("/product");
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ProtectedLocalStorage Storage { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHttpClientFactory ClientFactory { get; set; }
     }
 }

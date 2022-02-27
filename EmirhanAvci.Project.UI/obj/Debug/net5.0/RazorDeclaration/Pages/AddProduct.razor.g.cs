@@ -138,6 +138,13 @@ using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Pages\AddProduct.razor"
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/AddProduct")]
     public partial class AddProduct : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -147,7 +154,7 @@ using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 71 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Pages\AddProduct.razor"
+#line 73 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Pages\AddProduct.razor"
        
     public ProductAddDto Product = new();
 
@@ -161,7 +168,28 @@ using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
     protected override async Task OnInitializedAsync()
     {
         var client = ClientFactory.CreateClient();
-        Categories= await client.GetFromJsonAsync<DataResult<CategoryListDto>>("http://localhost:5001/api/Category/GetAll");
+
+        var url = $"http://localhost:5001/api/Brand/GetAll";
+        var request = new HttpRequestMessage(HttpMethod.Get, url);
+
+        var token = await Storage.GetAsync<string>("token");
+
+
+        request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token.Value);
+
+        var response = await client.SendAsync(request);
+
+        //WithAuthorizationMod
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            Brands= System.Text.Json.JsonSerializer.Deserialize<DataResult<BrandListDto>>(json);
+            Categories = await client.GetFromJsonAsync<DataResult<CategoryListDto>>("http://localhost:5001/api/Category/GetAll");
+            Colors = await client.GetFromJsonAsync<DataResult<ColorListDto>>("http://localhost:5001/api/Color/GetAll");
+
+        }
+        //NotAuthorizationMod
+        Categories = await client.GetFromJsonAsync<DataResult<CategoryListDto>>("http://localhost:5001/api/Category/GetAll");
         Brands = await client.GetFromJsonAsync<DataResult<BrandListDto>>("http://localhost:5001/api/Brand/GetAll");
         Colors = await client.GetFromJsonAsync<DataResult<ColorListDto>>("http://localhost:5001/api/Color/GetAll");
     }
@@ -172,6 +200,8 @@ using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
         var client = ClientFactory.CreateClient();
 
         var response = await client.PostAsJsonAsync("http://localhost:5001/api/Product/AddAsync", Product);
+        NavManager.NavigateTo("/product");
+
 
     }
     void HandleFileSelection(InputFileChangeEventArgs eventArgs)
@@ -184,6 +214,8 @@ using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ProtectedLocalStorage Storage { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHttpClientFactory ClientFactory { get; set; }
     }
 }

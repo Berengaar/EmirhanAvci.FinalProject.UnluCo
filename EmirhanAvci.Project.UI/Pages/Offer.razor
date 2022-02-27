@@ -1,0 +1,34 @@
+﻿
+@page "/Offer/{id}"
+@inject IHttpClientFactory ClientFactory
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inject ProtectedLocalStorage Storage
+
+<h3>Offer</h3>
+<hr />
+<br />
+<EditForm Model="@AddedOffer" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="Percent">Percent Price:</label>
+        <InputNumber class="from-control" id="Email" @bind-Value="AddedOffer.Percent"></InputNumber>
+        <ValidationMessage For="()=>AddedOffer.Percent" />
+    </div>
+    <input class="btn btn-warning" type="submit" value="Give" />
+</EditForm>
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    public OfferAddDto AddedOffer = new();
+
+    private async Task Submit()
+    {
+        AddedOffer.UserId = 1;
+        AddedOffer.ProductId = Convert.ToInt32(Id);
+        var client = ClientFactory.CreateClient();
+
+        var response = await client.PostAsJsonAsync("http://localhost:5001/api/Offer/Add", AddedOffer);
+
+    }
+}

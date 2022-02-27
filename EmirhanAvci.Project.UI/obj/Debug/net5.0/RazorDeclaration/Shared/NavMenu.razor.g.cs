@@ -146,7 +146,7 @@ using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 43 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Shared\NavMenu.razor"
+#line 48 "D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.UI\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
