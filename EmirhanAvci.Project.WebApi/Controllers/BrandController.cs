@@ -1,6 +1,8 @@
 ﻿using EmirhanAvci.Project.BusinessLayer.Abstract;
-using EmirhanAvci.Project.EntityLayer.Dtos;
+using EmirhanAvci.Project.EntityLayer.Authentication;
+using EmirhanAvci.Project.EntityLayer.Dtos.BrandDtos;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.ComplexTypes;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -43,6 +45,7 @@ namespace EmirhanAvci.Project.WebApi.Controllers
         }
 
         [HttpPost("Add")]
+        [Authorize]
         public async Task<IActionResult> AddAsync([FromBody]BrandAddDto brandAddDto)
         {
             if (ModelState.IsValid)

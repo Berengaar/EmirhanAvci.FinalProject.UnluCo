@@ -2,7 +2,7 @@
 using EmirhanAvci.Project.BusinessLayer.Abstract;
 using EmirhanAvci.Project.DataAccessLayer.Abstract;
 using EmirhanAvci.Project.EntityLayer.Concrete;
-using EmirhanAvci.Project.EntityLayer.Dtos;
+using EmirhanAvci.Project.EntityLayer.Dtos.CategoryDtos;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.Abstract;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.ComplexTypes;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
@@ -51,7 +51,7 @@ namespace EmirhanAvci.Project.BusinessLayer.Concrete
 
         public async Task<IDataResult<CategoryDto>> GetAsync(int categoryId)
         {
-            var category = await _unitOfWork.Categories.GetAsync(predicate: c => c.Id == categoryId, includeProperties: c => c.Products);
+            var category = await _unitOfWork.Categories.GetAsync(predicate: c => c.Id == categoryId);
             if (category != null)
             {
                 return new DataResult<CategoryDto>(resultStatus: ResultStatus.Success, data: new CategoryDto

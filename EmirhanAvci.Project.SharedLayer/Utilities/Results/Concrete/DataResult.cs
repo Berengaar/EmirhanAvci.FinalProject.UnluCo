@@ -4,12 +4,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete
 {
     public class DataResult<T> : IDataResult<T>
     {
+        public DataResult()
+        {
+
+        }
         public DataResult(ResultStatus resultStatus, T data)
         {
             ResultStatus = resultStatus;
@@ -28,13 +33,10 @@ namespace EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete
             Exception = ex;
             Data = data;
         }
-        public T Data { get; }
-        public ResultStatus ResultStatus { get; }
-        public string Message { get; }
-        public Exception Exception { get; }
+        [JsonInclude]
+        public T Data { get;  private set; }
+        public ResultStatus ResultStatus { get;  set; }
+        public string Message { get;  set; }
+        public Exception Exception { get;  set; }
     }
 }
-
-/*
-
- */

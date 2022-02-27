@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using EmirhanAvci.Project.EntityLayer.Concrete;
-using EmirhanAvci.Project.EntityLayer.Dtos;
+using EmirhanAvci.Project.EntityLayer.Dtos.BrandDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;

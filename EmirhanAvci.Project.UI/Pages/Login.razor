@@ -1,0 +1,38 @@
+﻿@page "/login"
+@inject IHttpClientFactory ClientFactory
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inject ProtectedLocalStorage Storage
+<h3>Login</h3>
+
+<EditForm Model="@User" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator />
+    <p>
+        <label for="Email">Email:</label>
+        <InputText id="Email" @bind-Value="User.Username"></InputText>
+        <ValidationMessage For="()=>User.Username" />
+    </p>
+    <p>
+        <label for="Password">Password::</label>
+        <InputText id="Password" @bind-Value="User.Password"></InputText>
+        <ValidationMessage For="()=>User.Password" />
+    </p>
+    <input type="submit" value="Login" />
+</EditForm>
+
+@code {
+    private EmirhanAvci.Project.EntityLayer.Authentication.Models.LoginModel User = new();
+
+    private async Task Submit()
+    {
+        var client = ClientFactory.CreateClient();
+
+        var response = await client.PostAsJsonAsync("http://localhost:5001/Login", User);
+
+        if (response.IsSuccessStatusCode)
+        {
+            string token = await response.Content.ReadAsStringAsync();
+            await Storage.SetAsync("token", token);
+        }
+    }
+}
+@*  https://localhost:44353/   https://localhost:44353/authenticate/Login *@

@@ -1,4 +1,5 @@
-﻿using EmirhanAvci.Project.SharedLayer.Entities.Abstract;
+﻿using EmirhanAvci.Project.EntityLayer.Concrete;
+using EmirhanAvci.Project.SharedLayer.Entities.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace EmirhanAvci.Project.EntityLayer.Dtos.OrderDtos
 {
     public class OrderListDto:DtoGetBase
     {
-        public IList<OrderDto> Orders { get; set; }
+        public IList<Order> Orders { get; set; }
     }
 }

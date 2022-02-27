@@ -1,0 +1,95 @@
+﻿@page "/UpdateProduct/{id}"
+@inject IHttpClientFactory ClientFactory
+
+<h3>Update Product</h3>
+<hr />
+<br />
+@if (Product != null)
+{
+<EditForm Model="@Product" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="Name">Name: </label>
+        <InputText class="form-control" id="Name" @bind-Value="Product.Name" />
+        <ValidationMessage For="() => Product.Name" />
+    </div>
+    <div class="form-group">
+        <label for="Description">Description: </label>
+        <InputText class="form-control" id="Description" @bind-Value="Product.Description" />
+        <ValidationMessage For="() => Product.Description" />
+    </div>
+    <div class="form-group">
+        <label for="Description">Price: </label>
+        <InputNumber class="form-control" id="Description" @bind-Value="Product.Price" />
+        <ValidationMessage For="() => Product.Description" />
+    </div>
+    <div class="form-group">
+        <label for="BrandId">Categories: </label><br />
+        @if (Categories != null)
+        {
+            <InputSelect class="form-control" id="categories" @bind-Value="Product.CategoryId">
+                @foreach (var category in Categories.Data.Categories)
+                        {
+                    <option value="@category.Id">@category.Name</option>
+                        }
+            </InputSelect>
+        }
+    </div>
+    <div class="form-group">
+        <label for="BrandId">Brands: </label><br />
+        @if (Brands != null && Categories != null)
+        {
+            <InputSelect class="form-control" id="brands" @bind-Value="Product.BrandId">
+                @foreach (var brand in Brands.Data.Brands)
+                        {
+                    <option value="@brand.Id">@brand.Name</option>
+                        }
+            </InputSelect>
+        }
+    </div>
+    <div class="form-group">
+        <label for="ColorId">Colors: </label><br />
+        @if (Colors != null && Brands != null && Categories != null)
+        {
+            <InputSelect class="form-control" id="colors" @bind-Value="Product.ColorId">
+                @foreach (var color in Colors.Data.Colors)
+                        {
+                    <option value="@color.Id">@color.Name</option>
+                        }
+            </InputSelect>
+        }
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</EditForm>
+}
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    public ProductUpdateDto Product { get; set; }
+
+    public DataResult<CategoryListDto> Categories;
+
+    public DataResult<BrandListDto> Brands;
+
+    public DataResult<ColorListDto> Colors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var client = ClientFactory.CreateClient();
+        var url = "http://localhost:5001/api/Product/Update/" + Id;
+        Product = await client.GetFromJsonAsync<ProductUpdateDto>(url);
+        Categories = await client.GetFromJsonAsync<DataResult<CategoryListDto>>("http://localhost:5001/api/Category/GetAll");
+        Brands = await client.GetFromJsonAsync<DataResult<BrandListDto>>("http://localhost:5001/api/Brand/GetAll");
+        Colors = await client.GetFromJsonAsync<DataResult<ColorListDto>>("http://localhost:5001/api/Color/GetAll");
+    }
+
+    private async Task Submit()
+    {
+        var client = ClientFactory.CreateClient();
+
+        var url = "http://localhost:5001/api/Product/UpdateAsync/" + Id;
+        var response = await client.PutAsJsonAsync(url, Product);
+    }
+}

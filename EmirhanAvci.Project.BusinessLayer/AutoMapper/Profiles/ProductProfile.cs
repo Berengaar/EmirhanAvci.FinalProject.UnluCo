@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using EmirhanAvci.Project.EntityLayer.Concrete;
-using EmirhanAvci.Project.EntityLayer.Dtos;
+using EmirhanAvci.Project.EntityLayer.Dtos.ProductDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +15,7 @@ namespace EmirhanAvci.Project.BusinessLayer.AutoMapper.Profiles
         {
             CreateMap<ProductAddDto, Product>();
             CreateMap<ProductUpdateDto, Product>();
+            CreateMap<ProductUploadDto, Product>();
             CreateMap<ProductDto, Product>();
         }
     }

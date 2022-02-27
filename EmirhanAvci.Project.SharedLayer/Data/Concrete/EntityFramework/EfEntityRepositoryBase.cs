@@ -1,5 +1,6 @@
 ﻿using EmirhanAvci.Project.SharedLayer.Data.Abstract;
 using EmirhanAvci.Project.SharedLayer.Entities.Abstract;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -35,10 +36,10 @@ namespace EmirhanAvci.Project.SharedLayer.Data.Concrete.EntityFramework
         {
             return await _context.Set<TEntity>().CountAsync(predicate);
         }
-
+        
         public async Task DeleteAsync(TEntity entity)
         {
-            await Task.Run(() => { _context.Set<TEntity>().Remove(entity); });
+            await Task.Run(() => { _context.Set<TEntity>().Remove(entity); });  //Thread 2
             await _context.SaveChangesAsync();
 
         }
@@ -83,5 +84,12 @@ namespace EmirhanAvci.Project.SharedLayer.Data.Concrete.EntityFramework
             await _context.SaveChangesAsync();
 
         }
+
+        public async Task UploadAsync(TEntity entity)
+        {
+            await Task.Run(() => _context.Set<TEntity>().Update(entity));
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

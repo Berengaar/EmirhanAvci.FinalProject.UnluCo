@@ -1,5 +1,5 @@
 ﻿using EmirhanAvci.Project.BusinessLayer.Abstract;
-using EmirhanAvci.Project.EntityLayer.Dtos;
+using EmirhanAvci.Project.EntityLayer.Dtos.ColorDtos;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.ComplexTypes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -47,7 +47,7 @@ namespace EmirhanAvci.Project.WebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _colorService.AddAsync(colorAddDto, "aaa");
+                var result = await _colorService.AddAsync(colorAddDto);
                 if (result.ResultStatus == ResultStatus.Success)
                 {
                     return Ok(result);
@@ -70,7 +70,7 @@ namespace EmirhanAvci.Project.WebApi.Controllers
             colorUpdateDto.Id = colorId;
             if (ModelState.IsValid)
             {
-                var result = await _colorService.UpdateAsync(colorUpdateDto, "aaa");
+                var result = await _colorService.UpdateAsync(colorUpdateDto);
                 if (result.ResultStatus == ResultStatus.Success)
                 {
                     return Ok(result);

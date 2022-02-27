@@ -1,5 +1,5 @@
 ﻿using EmirhanAvci.Project.BusinessLayer.Abstract;
-using EmirhanAvci.Project.EntityLayer.Dtos;
+using EmirhanAvci.Project.EntityLayer.Dtos.CategoryDtos;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.ComplexTypes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

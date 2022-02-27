@@ -1,0 +1,80 @@
+﻿@page "/product"
+@inject IHttpClientFactory ClientFactory
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inject ProtectedLocalStorage Storage
+
+<table class="table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>BrandId</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Products != null)
+        {
+            @foreach (var item in Products.Data.Products)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Price</td>
+                    <td>@item.BrandId</td>
+                    <td>
+                        <img src="/img/@item.ImagePath" style="max-width:100px; max-height:100px;" />
+                    </td>
+                    <td><a class="btn btn-warning" href="/UpdateProduct/@item.Id">Update</a></td>
+                    <td><a class="btn btn-danger" href="/UpdateProduct/@item.Id">Offer</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<br />
+<br />
+<a class="btn btn-info" href="AddProduct">Add Product</a>
+
+@code {
+    public DataResult<ProductListDto> Products;
+    //public EmirhanAvci.Project.EntityLayer.Dtos.ProductDtos.ProductListDto Products = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+
+        var client = ClientFactory.CreateClient();
+        Products = await client.GetFromJsonAsync<DataResult<ProductListDto>>("http://localhost:5001/api/Product/GetAll");
+
+        //var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5001/api/Product/GetAll");
+
+        //var response = await client.SendAsync(request);
+
+        //var json = await response.Content.ReadAsStringAsync();
+        //var x = System.Text.Json.JsonSerializer.Deserialize<EmirhanAvci.Project.EntityLayer.Dtos.ProductDtos.ProductListDto>(json);
+        //if (response.IsSuccessStatusCode)
+        //{
+        //    //json = await response.Content.ReadAsStringAsync();
+        //    //var x = System.Text.Json.JsonSerializer.Deserialize<EmirhanAvci.Project.EntityLayer.Dtos.ProductDtos.ProductListDto>(json);
+        //    //Products =System.Text.Json.JsonSerializer.Deserialize<EmirhanAvci.Project.EntityLayer.Dtos.ProductDtos.ProductListDto>(json);
+        //    //int x = 0;
+        //}
+    }
+
+    //private async Task Submit()
+    //{
+    //    var client = ClientFactory.CreateClient();
+
+    //    var response = await client.PostAsJsonAsync("https://localhost:44353/Product/GetAll", Products);
+    //    if (response.IsSuccessStatusCode)
+    //    {
+    //        var json = await response.Content.ReadAsStringAsync();
+    //        Products = System.Text.Json.JsonSerializer.Deserialize<List<EmirhanAvci.Project.EntityLayer.Dtos.ProductDtos.ProductListDto>>(json);
+    //    }
+    //}
+}
+
+@*  https://localhost:44353/    *@

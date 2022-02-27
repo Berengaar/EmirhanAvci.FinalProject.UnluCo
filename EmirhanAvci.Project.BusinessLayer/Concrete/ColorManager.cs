@@ -2,7 +2,7 @@
 using EmirhanAvci.Project.BusinessLayer.Abstract;
 using EmirhanAvci.Project.DataAccessLayer.Abstract;
 using EmirhanAvci.Project.EntityLayer.Concrete;
-using EmirhanAvci.Project.EntityLayer.Dtos;
+using EmirhanAvci.Project.EntityLayer.Dtos.ColorDtos;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.Abstract;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.ComplexTypes;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
@@ -25,23 +25,23 @@ namespace EmirhanAvci.Project.BusinessLayer.Concrete
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<IResult> AddAsync(ColorAddDto colorAddDto, string createdByName)
+        public async Task<IResult> AddAsync(ColorAddDto colorAddDto)
         {
             var color = _mapper.Map<Color>(colorAddDto);
-            color.CreatedByName = createdByName;
-            color.ModifiedByName = createdByName;
+            color.CreatedByName = "aaa";
+            color.ModifiedByName = "aaa";
             await _unitOfWork.Colors.AddAsync(color);
 
             return new Result(resultStatus: ResultStatus.Success, message: $"{color.Name} added successfully.");
         }
 
-        public async Task<IResult> DeleteAsync(int colorId, string modifiedByName)
+        public async Task<IResult> DeleteAsync(int colorId)
         {
             var color = await _unitOfWork.Colors.GetAsync(predicate: c => c.Id == colorId, includeProperties: c => c.Products);
             if (color != null)
             {
                 color.IsDeleted = true;
-                color.ModifiedByName = modifiedByName;
+                color.ModifiedByName = "aaa";
                 color.ModifiedDate = DateTime.Now;
                 await _unitOfWork.Colors.DeleteAsync(color);
                 return new Result(resultStatus: ResultStatus.Success, message: $"{color.Name} is deleted completely");
@@ -85,7 +85,7 @@ namespace EmirhanAvci.Project.BusinessLayer.Concrete
 
         public async Task<IDataResult<ColorDto>> GetAsync(int colorId)
         {
-            var color = await _unitOfWork.Colors.GetAsync(predicate: c => c.Id == colorId, includeProperties: c => c.Products);
+            var color = await _unitOfWork.Colors.GetAsync(predicate: c => c.Id == colorId);
             if (color != null)
             {
                 return new DataResult<ColorDto>(resultStatus: ResultStatus.Success, data: new ColorDto
@@ -113,11 +113,11 @@ namespace EmirhanAvci.Project.BusinessLayer.Concrete
             return new Result(resultStatus: ResultStatus.Error, message: $"{color.Name} is not deleted");
         }
 
-        public async Task<IResult> UpdateAsync(ColorUpdateDto colorUpdateDto, string modifiedByName)
+        public async Task<IResult> UpdateAsync(ColorUpdateDto colorUpdateDto)
         {
             var color = _mapper.Map<Color>(colorUpdateDto);
-            color.ModifiedByName = modifiedByName;
-            color.CreatedByName = modifiedByName;
+            color.ModifiedByName = "aaa";
+            color.CreatedByName = "aaa";
             await _unitOfWork.Colors.UpdateAsync(color);
             return new Result(resultStatus: ResultStatus.Success, message: $"{color.Name} updated");
         }

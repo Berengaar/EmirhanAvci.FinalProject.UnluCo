@@ -2,7 +2,7 @@
 using EmirhanAvci.Project.BusinessLayer.Abstract;
 using EmirhanAvci.Project.DataAccessLayer.Abstract;
 using EmirhanAvci.Project.EntityLayer.Concrete;
-using EmirhanAvci.Project.EntityLayer.Dtos;
+using EmirhanAvci.Project.EntityLayer.Dtos.BrandDtos;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.Abstract;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.ComplexTypes;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.Concrete;
@@ -86,7 +86,7 @@ namespace EmirhanAvci.Project.BusinessLayer.Concrete
 
         public async Task<IDataResult<BrandDto>> GetAsync(int brandId)
         {
-            var brand = await _unitOfWork.Brands.GetAsync(predicate: c => c.Id == brandId, includeProperties: c => c.Products);
+            var brand = await _unitOfWork.Brands.GetAsync(predicate: c => c.Id == brandId);
             if (brand != null)
             {
                 return new DataResult<BrandDto>(resultStatus: ResultStatus.Success, data: new BrandDto

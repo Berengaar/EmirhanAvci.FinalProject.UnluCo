@@ -21,6 +21,7 @@ namespace EmirhanAvci.Project.DataAccessLayer.Concrete.EntityFramework.Mappings
             builder.Property(p => p.CreatedByName).IsRequired().HasMaxLength(50);
             builder.Property(p => p.CreatedDate).IsRequired();
             builder.Property(p => p.Price).IsRequired();
+            builder.Property(p => p.ImagePath).HasMaxLength(400);
 
             //Primary Key + Identity
             builder.HasKey(p => p.Id);
@@ -32,7 +33,11 @@ namespace EmirhanAvci.Project.DataAccessLayer.Concrete.EntityFramework.Mappings
             builder.Property(p => p.Description).IsRequired().HasMaxLength(400);
             builder.Property(p => p.IsOfferable).IsRequired().HasDefaultValue(false);
             builder.Property(p => p.IsSold).IsRequired().HasDefaultValue(false);
-            
+
+            //Relation one to one
+            builder.HasOne<Order>(s => s.Order)
+           .WithOne(ad => ad.Product)
+           .HasForeignKey<Order>(ad => ad.ProductId);
             //Table
             builder.ToTable("tbl_Products");
 

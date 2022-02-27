@@ -1,4 +1,4 @@
-﻿using EmirhanAvci.Project.EntityLayer.Dtos;
+﻿using EmirhanAvci.Project.EntityLayer.Dtos.ColorDtos;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.Abstract;
 using System;
 using System.Collections.Generic;
@@ -13,9 +13,9 @@ namespace EmirhanAvci.Project.BusinessLayer.Abstract
         Task<IDataResult<ColorDto>> GetAsync(int colorId);
         Task<IDataResult<ColorListDto>> GetAllAsync();
         Task<IDataResult<ColorListDto>> GetAllByNonDeletedAsync();
-        Task<IResult> AddAsync(ColorAddDto colorAddDto, string createdByName);
-        Task<IResult> UpdateAsync(ColorUpdateDto colorUpdateDto, string modifiedByName);
-        Task<IResult> DeleteAsync(int colorId, string modifiedByName);
+        Task<IResult> AddAsync(ColorAddDto colorAddDto);
+        Task<IResult> UpdateAsync(ColorUpdateDto colorUpdateDto);
+        Task<IResult> DeleteAsync(int colorId);
         Task<IResult> HardDeleteAsync(int colorId);
     }
 }

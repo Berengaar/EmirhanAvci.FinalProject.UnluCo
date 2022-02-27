@@ -1,4 +1,4 @@
-﻿using EmirhanAvci.Project.EntityLayer.Dtos;
+﻿using EmirhanAvci.Project.EntityLayer.Dtos.BrandDtos;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.Abstract;
 using System;
 using System.Collections.Generic;

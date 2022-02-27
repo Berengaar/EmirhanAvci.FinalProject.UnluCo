@@ -2,6 +2,7 @@ D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\Emirhan
 D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.SharedLayer\bin\Debug\net5.0\EmirhanAvci.Project.SharedLayer.dll
 D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.SharedLayer\bin\Debug\net5.0\ref\EmirhanAvci.Project.SharedLayer.dll
 D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.SharedLayer\bin\Debug\net5.0\EmirhanAvci.Project.SharedLayer.pdb
+D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.SharedLayer\obj\Debug\net5.0\EmirhanAvci.Project.SharedLayer.csproj.AssemblyReference.cache
 D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.SharedLayer\obj\Debug\net5.0\EmirhanAvci.Project.SharedLayer.GeneratedMSBuildEditorConfig.editorconfig
 D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.SharedLayer\obj\Debug\net5.0\EmirhanAvci.Project.SharedLayer.AssemblyInfoInputs.cache
 D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.SharedLayer\obj\Debug\net5.0\EmirhanAvci.Project.SharedLayer.AssemblyInfo.cs
@@ -9,4 +10,3 @@ D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\Emirhan
 D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.SharedLayer\obj\Debug\net5.0\EmirhanAvci.Project.SharedLayer.dll
 D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.SharedLayer\obj\Debug\net5.0\ref\EmirhanAvci.Project.SharedLayer.dll
 D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.SharedLayer\obj\Debug\net5.0\EmirhanAvci.Project.SharedLayer.pdb
-D:\Users\Bdk11\Desktop\Emir\WebApiProjectEmir\EmirhanAvci.Project.WebApi\EmirhanAvci.Project.SharedLayer\obj\Debug\net5.0\EmirhanAvci.Project.SharedLayer.csproj.AssemblyReference.cache

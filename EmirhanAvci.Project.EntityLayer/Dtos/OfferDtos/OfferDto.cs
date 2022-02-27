@@ -1,4 +1,5 @@
-﻿using EmirhanAvci.Project.SharedLayer.Entities.Abstract;
+﻿using EmirhanAvci.Project.EntityLayer.Concrete;
+using EmirhanAvci.Project.SharedLayer.Entities.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace EmirhanAvci.Project.EntityLayer.Dtos.OfferDtos
 {
     public class OfferDto:DtoGetBase
     {
+        public Offer Offer { get; set; }
     }
 }

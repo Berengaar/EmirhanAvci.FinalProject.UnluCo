@@ -29,6 +29,8 @@ namespace EmirhanAvci.Project.DataAccessLayer.Concrete.EntityFramework.Mappings
             builder.Property(o => o.OrderCode).IsRequired().HasMaxLength(12);
             builder.Property(o => o.IsBuy).IsRequired().HasDefaultValue(false);
 
+            //One to One relation
+            //builder.HasOne<Product>(o=>o.Product).WithOne(p=>p.Order).HasForeignKey()
             //Table
             builder.ToTable("tbl_Orders");
 

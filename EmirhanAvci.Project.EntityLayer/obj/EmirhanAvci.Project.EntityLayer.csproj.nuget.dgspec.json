@@ -53,6 +53,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
               "version": "[5.0.13, )"
@@ -122,6 +126,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "DevExpress.Xpo": {
+              "target": "Package",
+              "version": "[20.1.7, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.13, )"

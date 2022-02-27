@@ -1,5 +1,5 @@
 ﻿using EmirhanAvci.Project.EntityLayer.Concrete;
-using EmirhanAvci.Project.EntityLayer.Dtos;
+using EmirhanAvci.Project.EntityLayer.Dtos.CategoryDtos;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.Abstract;
 using System;
 using System.Collections.Generic;

@@ -2,7 +2,8 @@
 using EmirhanAvci.Project.BusinessLayer.Abstract;
 using EmirhanAvci.Project.DataAccessLayer.Abstract;
 using EmirhanAvci.Project.EntityLayer.Concrete;
-using EmirhanAvci.Project.EntityLayer.Dtos;
+using EmirhanAvci.Project.EntityLayer.Dtos.ProductDtos;
+using EmirhanAvci.Project.EntityLayer.Dtos.OfferDtos;
 using EmirhanAvci.Project.EntityLayer.Dtos.SubDtos;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.Abstract;
 using EmirhanAvci.Project.SharedLayer.Utilities.Results.ComplexTypes;
@@ -19,16 +20,18 @@ namespace EmirhanAvci.Project.BusinessLayer.Concrete
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-
+        //private readonly IProductService _productService;
         public ProductManager(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            //_productService = productService;
         }
 
         public async Task<IResult> AddAsync(ProductAddDto productAddDto)
         {
             var product = _mapper.Map<Product>(productAddDto);
+            product.IsOfferable = true;
             product.CreatedByName = "Added";
             product.CreatedDate = DateTime.Now;
             product.ModifiedByName = "Added";
@@ -39,7 +42,7 @@ namespace EmirhanAvci.Project.BusinessLayer.Concrete
 
         public async Task<IResult> DeleteAsync(int productId)
         {
-            var product = await _unitOfWork.Products.GetAsync(predicate: c => c.Id == productId, includeProperties:null);
+            var product = await _unitOfWork.Products.GetAsync(predicate: c => c.Id == productId, includeProperties: null);
             if (product != null)
             {
                 product.IsDeleted = true;
@@ -56,13 +59,13 @@ namespace EmirhanAvci.Project.BusinessLayer.Concrete
 
         public async Task<IDataResult<ProductListDto>> GetAllAsync()
         {
-            var products = await _unitOfWork.Products.GetAllAsync(predicate: null, includeProperties: null);
-            if (products.Count>-1)
+            var products = await _unitOfWork.Products.GetAllAsync();
+            if (products.Count > -1)
             {
                 return new DataResult<ProductListDto>(resultStatus: ResultStatus.Success, data: new ProductListDto
                 {
-                    Products=products,
-                    ResultStatus=ResultStatus.Success
+                    Products = products,
+                    ResultStatus = ResultStatus.Success
                 });
             }
             else
@@ -73,7 +76,7 @@ namespace EmirhanAvci.Project.BusinessLayer.Concrete
 
         public async Task<IDataResult<ProductDto>> GetAsync(int productId)
         {
-            var product = await _unitOfWork.Products.GetAsync(predicate: c => c.Id == productId, includeProperties: null);
+            var product = await _unitOfWork.Products.GetAsync(predicate: c => c.Id == productId);
             if (product != null)
             {
                 return new DataResult<ProductDto>(resultStatus: ResultStatus.Success, data: new ProductDto
@@ -90,7 +93,7 @@ namespace EmirhanAvci.Project.BusinessLayer.Concrete
 
         public async Task<IDataResult<ProductListDto>> GetByBrandIdAsync(int brandId)
         {
-            var products = await _unitOfWork.Products.GetAllAsync(predicate: p=>p.BrandId==brandId);
+            var products = await _unitOfWork.Products.GetAllAsync(predicate: p => p.BrandId == brandId);
             if (products.Count > -1)
             {
                 return new DataResult<ProductListDto>(resultStatus: ResultStatus.Success, data: new ProductListDto
@@ -163,7 +166,7 @@ namespace EmirhanAvci.Project.BusinessLayer.Concrete
             {
                 product.IsDeleted = true;
                 product.ModifiedDate = DateTime.Now;
-                await _unitOfWork.Products.UpdateAsync(product).ContinueWith(db => _unitOfWork.SaveAsync());
+                await _unitOfWork.Products.UpdateAsync(product);
                 return new Result(resultStatus: ResultStatus.Success, message: $"{product.Name} is deleted");
             }
             return new Result(resultStatus: ResultStatus.Error, message: $"{product.Name} is not deleted");
@@ -172,25 +175,58 @@ namespace EmirhanAvci.Project.BusinessLayer.Concrete
         public async Task<IResult> UpdateAsync(ProductUpdateDto productUpdateDto)
         {
             var product = _mapper.Map<Product>(productUpdateDto);
+            product.IsOfferable = true;
             product.ModifiedByName = "updated";
-            await _unitOfWork.Products.UpdateAsync(product).ContinueWith(c => _unitOfWork.SaveAsync());
-            return new Result(resultStatus: ResultStatus.Error, message: $"{product.Name} can't update");
+            product.CreatedByName = "updated";
+            await _unitOfWork.Products.UpdateAsync(product);
+            return new Result(resultStatus: ResultStatus.Success, message: $"{product.Name} updated");
         }
 
-        public async Task<IDataResult<ProductOffersDtos>> GetProductOffersAsync(int productId)
+        public async Task<IDataResult<ProductDto>> GetProductOffersAsync(int productId)
         {
-            var products = await _unitOfWork.Offers.GetAllAsync(predicate: p => p.Id == productId);
-            if (products.Count>-1)
+            var productOffers = await _unitOfWork.Products.GetAsync(predicate: p => p.Id == productId, t => t.Offers);
+            if (productOffers != null)
             {
-                return new DataResult<ProductOffersDtos>(resultStatus: ResultStatus.Success, data: new ProductOffersDtos
+                return new DataResult<ProductDto>(resultStatus: ResultStatus.Success, data: new ProductDto
                 {
-                    Offers=products,
-                    ResultStatus=ResultStatus.Success
+                    Product = productOffers,
+                    ResultStatus = ResultStatus.Success
                 });
             }
             else
             {
-                return new DataResult<ProductOffersDtos>(resultStatus: ResultStatus.Error, data: null);
+                return new DataResult<ProductDto>(resultStatus: ResultStatus.Error, data: null);
+            }
+        }
+
+        public async Task<IResult> UploadAsync(ProductUploadDto productUploadDto)
+        {
+            var product = _mapper.Map<Product>(productUploadDto);
+            product.ModifiedByName = "updated";
+            await _unitOfWork.Products.UploadAsync(product).ContinueWith(c => _unitOfWork.SaveAsync());
+            return new Result(resultStatus: ResultStatus.Success, message: $"{product.Name}  uploaded");
+        }
+
+        public async Task<ProductUpdateDto> GetUpdateAsync(int productId)
+        {
+            var product = await _unitOfWork.Products.GetAsync(predicate: c => c.Id == productId);
+            if (product != null)
+            {
+                return new ProductUpdateDto 
+                {
+                    BrandId = product.BrandId,
+                    UserId = product.UserId,
+                    Id=product.Id,
+                    CategoryId = product.CategoryId,
+                    Price = product.Price,
+                    Name = product.Name,
+                    Description = product.Description,
+                    ColorId = product.ColorId
+                };
+            }
+            else
+            {
+                return null;
             }
         }
     }

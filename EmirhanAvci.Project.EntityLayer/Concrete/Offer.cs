@@ -1,4 +1,5 @@
-﻿using EmirhanAvci.Project.SharedLayer.Entities.Abstract;
+﻿using EmirhanAvci.Project.EntityLayer.Authentication;
+using EmirhanAvci.Project.SharedLayer.Entities.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;

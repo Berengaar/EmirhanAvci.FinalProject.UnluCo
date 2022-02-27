@@ -1,4 +1,5 @@
 ﻿using EmirhanAvci.Project.SharedLayer.Entities.Abstract;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +22,6 @@ namespace EmirhanAvci.Project.SharedLayer.Data.Abstract
         Task DeleteAsync(T entity);
         Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
         Task<int> CountAsync(Expression<Func<T, bool>> predicate);
+        Task UploadAsync(T entity);
     }
 }
