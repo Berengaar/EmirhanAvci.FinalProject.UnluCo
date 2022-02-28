@@ -66,7 +66,7 @@ namespace EmirhanAvci.Project.WebApi.Controllers
             var result = await _productService.GetByColorIdAsync(colorId);
             return Ok(result);
         }
-
+        [Authorize]
         [HttpPut("UpdateAsync/{productId}")]
         public async Task<IActionResult> UpdateAsync(int productId, ProductUpdateDto productUpdateDto)
         {
@@ -81,7 +81,7 @@ namespace EmirhanAvci.Project.WebApi.Controllers
             }
             return BadRequest();
         }
-
+        [Authorize]
         [HttpPut("Delete/{productId}")]
         public async Task<IActionResult> DeleteAsync(int productId)
         {
@@ -92,7 +92,7 @@ namespace EmirhanAvci.Project.WebApi.Controllers
             }
             else { return BadRequest(); }
         }
-
+        [Authorize]
         [HttpDelete("{productId}")]
         public async Task<IActionResult> HardDeleteAsync(int productId)
         {
